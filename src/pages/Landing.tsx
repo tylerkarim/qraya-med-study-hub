@@ -2,6 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { LogIn, UserPlus } from 'lucide-react';
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -17,13 +18,23 @@ const Landing = () => {
             </div>
             <span className="text-2xl font-bold text-medical-dark">Qraya</span>
           </div>
-          <Button 
-            variant="outline" 
-            onClick={() => navigate('/auth')}
-            className="border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white"
-          >
-            Sign In
-          </Button>
+          <div className="flex items-center space-x-3">
+            <Button 
+              variant="ghost" 
+              onClick={() => navigate('/auth')}
+              className="text-medical-blue hover:bg-medical-blue/10"
+            >
+              <LogIn className="w-4 h-4 mr-2" />
+              Log In
+            </Button>
+            <Button 
+              onClick={() => navigate('/auth')}
+              className="bg-medical-blue hover:bg-medical-blue/90 text-white"
+            >
+              <UserPlus className="w-4 h-4 mr-2" />
+              Sign Up
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -46,9 +57,9 @@ const Landing = () => {
             <Button
               onClick={() => navigate('/auth')}
               size="lg"
-              className="medical-gradient hover:opacity-90 text-white font-semibold text-lg px-12 py-6 rounded-2xl ios-shadow transform hover:scale-105 transition-all duration-200"
+              className="bg-medical-blue hover:bg-medical-blue/90 text-white font-semibold text-lg px-12 py-6 rounded-2xl ios-shadow transform hover:scale-105 transition-all duration-200"
             >
-              Study Better
+              Get Started
             </Button>
           </div>
 

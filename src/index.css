@@ -75,6 +75,16 @@
   body {
     @apply bg-background text-foreground font-sf;
   }
+
+  /* Override any yellow focus colors */
+  input:focus,
+  textarea:focus,
+  select:focus,
+  button:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgb(30 64 175 / 0.5) !important;
+    border-color: rgb(30 64 175) !important;
+  }
 }
 
 @layer components {
